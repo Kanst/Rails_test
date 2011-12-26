@@ -1,29 +1,61 @@
 .container {
-  width: 710px;
+  width: 800px;
 }
 
 body {
-  background: #cff;
+  background: #F5F5F5;
 }
 
 header {
   padding-top: 20px;
 }
 
+.left {
+  width: 199px;
+  padding: 10px;
+  /*border-right-color: #696969; 
+  border-right-style: solid; 
+  border-right-width: 2px; */
+  
+}
+
+.left_left {
+  padding: 10px;
+  border-left-color: #696969; /* Цвет линии справа */
+  border-left-style: solid; /* Стиль линии */
+  border-left-width: 2px; /* Толщина линии */
+  margin-left: 200px;
+  min-height : 400px;
+}
+
+
+.dialog {
+      width: 25em;
+      padding: 0 4em;
+      margin: 4em auto 0 auto;
+      border: 1px solid #ccc;
+      border-right-color: #999;
+      border-bottom-color: #999;
+    }
+
+
 header img {
   padding: 1em;
-  background: #fff;
+  background: #D3D3D3;
 }
 
 section {
+
   margin-top: 1em;
   font-size: 120%;
   padding: 20px;
-  background: #fff;
+  background: #D3D3D3;
+
 }
 
 section h1 {
   font-size: 200%;
+
 }
 
 /* Links */
@@ -47,7 +79,7 @@ nav {
 }
 
 nav {
-  background-color: white;
+  background-color: #D3D3D3;
   padding: 0 0.7em;
   white-space: nowrap;
 }
@@ -98,7 +130,7 @@ a.signup_button {
 footer {
   text-align: center;
   margin-top: 10px;
-  width: 710px;
+  width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -131,6 +163,10 @@ td.sidebar {
 
 div.field, div.actions {
   margin-bottom: 10px;
+}
+
+div.field2, div.actions2 {
+
 }
 
 .field_with_errors {

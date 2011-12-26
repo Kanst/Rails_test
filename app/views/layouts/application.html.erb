@@ -9,14 +9,55 @@
   <body>
     <div class="container">
       <%= render 'layouts/header' %>
+      
       <section class="round">
         <% flash.each do |key, value| %>
           <div class="flash <%= key %>"><%= value %></div>
         <% end %>
+        
+        
+        <div class="left" > 
+            <% if signed_in? %>
+              <% @user = User.find(current_user.id) %>
+              
+              Добро пожаловать, <h1><%= @user.name %></h1>
+              
+              <%= gravatar_for @user %>
+              
+              <li><%= link_to "Профиль", current_user %></li>
+              <li><%= link_to "Настройки", edit_user_path(current_user) %></li>
+            <% else %>
+              
+              <h1>Вход</h1>
+              <%= form_for(:session, :url => sessions_path) do |f| %>
+                
+                <div class="field2">
+                <%= f.label :email %><br />
+                <%= f.text_field :email, :size => 12 %>
+                </div>
+
+                <div class="field2">
+                <%= f.label :Пароль %><br />
+                <%= f.password_field :password, :size => 12 %>
+                </div>
+
+                <div class="actions">
+                <%= f.submit "Вход" %>
+                </div>
+
+              <% end %>
+              <p>Нет аккаунта? <%= link_to "Регистрация", signup_path %></p>
+            <% end %> 
+          </div>  
+          
+        <div class="left_left" > 
         <%= yield %>
+        </div> 
+
+
       </section>
-      <%= render 'layouts/footer' %>
     </div>
+      <%= render 'layouts/footer' %>
   </body>
 </html>
 
