@@ -9,7 +9,9 @@ class SessionsController < ApplicationController
     if user.nil?
       flash.now[:error] = "Invalid email/password combination."
       @title = "Sign in"
+      @erka = "tru"
       render 'new'
+      
     else
       sign_in user
       redirect_to :back
